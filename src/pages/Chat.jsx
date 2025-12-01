@@ -6,7 +6,10 @@ import remarkGfm from 'remark-gfm';
 import '../styles/Chat.css';
 
 // Configure axios base URL for API calls
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = window.location.hostname === 'localhost' 
+  ? 'http://localhost:3001' 
+  : 'https://nova-backend-3xcc.onrender.com';
+axios.defaults.baseURL = API_URL;
 
 export default function Chat() {
   const navigate = useNavigate();
