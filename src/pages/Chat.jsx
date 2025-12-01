@@ -8,7 +8,7 @@ import '../styles/Chat.css';
 // Configure axios base URL for API calls
 const API_URL = window.location.hostname === 'localhost' 
   ? 'http://localhost:3001' 
-  : 'https://nova-backend-3xcc.onrender.com';
+  : 'https://nova-backend-ixcc.onrender.com';
 axios.defaults.baseURL = API_URL;
 
 export default function Chat() {
