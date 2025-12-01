@@ -14,4 +14,7 @@ export default defineConfig({
     },
   },
   assetsInclude: ['**/*.glb', '**/*.gltf'],
+  define: {
+    __API_URL__: JSON.stringify(import.meta.env.VITE_API_URL || 'http://localhost:3001')
+  }
 })
