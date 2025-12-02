@@ -29,7 +29,7 @@ function Login() {
 
     try {
       console.log('Login attempt with:', { Email: formData.email, Password: formData.password });
-      const response = await axios.post('http://localhost:3001/api/auth/login', {
+      const response = await axios.post('/api/auth/login', {
         Email: formData.email,
         Password: formData.password
       }, {
