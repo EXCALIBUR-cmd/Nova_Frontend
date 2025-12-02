@@ -6,9 +6,7 @@ import remarkGfm from 'remark-gfm';
 import '../styles/Chat.css';
 
 // Configure axios base URL for API calls
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-console.log('🔧 DEBUG - import.meta.env.VITE_API_URL:', import.meta.env.VITE_API_URL);
-console.log('🔧 DEBUG - Final API_URL:', API_URL);
+const API_URL = 'https://nova-backend-ixcc.onrender.com';
 axios.defaults.baseURL = API_URL;
 
 export default function Chat() {
