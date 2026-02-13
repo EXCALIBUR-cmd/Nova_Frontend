@@ -69,7 +69,8 @@ function Register() {
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json'
-          }
+          },
+          timeout: 10000 // 10 second timeout
         }
       );
 
@@ -79,7 +80,11 @@ function Register() {
       }
       navigate('/chat');
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'An error occurred during registration');
+      if (err.code === 'ECONNABORTED') {
+        setError('Request timed out. Please check your connection and try again.');
+      } else {
+        setError(err.response?.data?.message || err.message || 'An error occurred during registration');
+      }
     } finally {
       setLoading(false);
     }
